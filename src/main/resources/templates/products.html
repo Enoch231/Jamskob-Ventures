@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    
+</head>
+<body>
+    <div class="container text-center ">
+      <a href="newProduct">Add new Product </a>
+      <br/><br/>
+       <div>
+           <h3>List of All Products</h3>
+       </div>
+       <div>
+           <table class="table table-striped table-bordered">
+              <thead class="thead-dark">
+                   <tr>
+                       <th>Product ID</th>
+                       <th>Name</th>
+                       <th>Description</th>
+                       <th>Price</th>
+                       <th>InStock</th>
+                       <th>Actions</th>
+                   </tr>
+              </thead>
+              <tbody>
+                   <tr th:each="product : ${listProducts}">
+                       <td th:text="${product.id}">Product ID</td>
+                       <td th:text="${product.name}">Name</td>
+                       <td th:text="${product.description}">Description</td>
+                       <td th:text="${product.price}">Price</td>
+                        <td th:text="${product.inStock}">InStock</td>
+                       <td>
+                          <a th:href="@{'/editProduct/' + ${product.id}}">Edit</a>
+                          &nbsp;&nbsp;&nbsp;&nbsp;
+                          <a th:href="@{'/deleteProduct/' + ${product.id}}">Delete</a>
+                       </td>
+                   </tr>
+              </tbody>
+           </table>
+      
+       </div>
+       
+          
+    </div>
+ 
+
+</body>
+</html>

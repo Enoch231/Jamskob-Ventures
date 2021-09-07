@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    
+</head>
+<body>
+    <div class="container text-center ">
+       <div>
+           <h1>Welcome to Jamskob Ventures</h1>
+       </div>
+       <div>
+           <h2><a th:href="@{/list_customers}">Customers</a></h2>
+           <h3><a th:href="@{/register}">Register</a></h3>
+           <h4><a th:href="@{/login}">Login</a></h4>
+           <h5><a th:href="@{/list_products}">Products</a></h5>
+       </div>
+          
+    </div>
+ 
+
+</body>
+</html>
